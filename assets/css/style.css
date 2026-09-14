@@ -139,25 +139,27 @@ h1, h2 {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 9px;
+  gap: clamp(10px, 1.6vh, 16px);
 }
 
 .brand__mark {
-  width: clamp(20px, 3vh, 26px);
-  height: clamp(20px, 3vh, 26px);
+  width: clamp(32px, min(6.5vh, 9vw), 72px);
+  height: clamp(32px, min(6.5vh, 9vw), 72px);
   object-fit: contain;
 }
 
 .brand__word {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: 0.8125rem;
-  letter-spacing: 0.05em;
+  font-weight: 900;
+  font-size: clamp(1.25rem, min(4vh, 5.6vw), 2.5rem);
+  letter-spacing: 0.005em;
   color: #fff;
 }
 
@@ -168,6 +170,13 @@ h1, h2 {
 .hero {
   flex: 1;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(16px, 4vw, 48px);
+}
+
+.hero__text {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   gap: clamp(8px, 1.6vh, 16px);
@@ -176,6 +185,18 @@ h1, h2 {
 
 .hero h1 {
   font-size: clamp(2.25rem, 9vh, 4.75rem);
+}
+
+.hero__mascot {
+  display: none;
+  height: clamp(140px, 32vh, 340px);
+  width: auto;
+  flex-shrink: 0;
+  opacity: 0.95;
+}
+
+@media (min-width: 860px) {
+  .hero__mascot { display: block; }
 }
 
 .hero__tagline {
